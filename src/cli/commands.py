@@ -2,6 +2,7 @@ from src.robot import Robot
 from src.garage import Garage
 
 
+# Commands that will be used by the users
 class Commands:
     @staticmethod
     def start():

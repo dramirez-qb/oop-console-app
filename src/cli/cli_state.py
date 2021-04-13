@@ -3,6 +3,7 @@ from src.robot import Robot
 from src.garage import Garage, RobotNotFoundException
 
 
+# Global State of the application
 class CliState:
     garage = Garage(0)
     procedures = [Procedure]

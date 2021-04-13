@@ -1,6 +1,7 @@
 from src.robot import Robot
 
 
+# Own Exceptions
 class GarageFullException(Exception):
     pass
 
@@ -20,6 +21,7 @@ class Garage:
     def __init__(self, capacity: int):
         self.capacity = capacity
 
+    # Add robot to garage
     def park_robot(self, robot):
         if self.is_full():
             raise GarageFullException()
@@ -29,11 +31,13 @@ class Garage:
 
         self.robots.append(robot)
 
+    # Remove robot from the garage
     def remove_robot(self, robot):
         try:
             self.robots.remove(robot)
         except ValueError:
             return False
 
+    # Check if garage is full
     def is_full(self):
         return len(self.robots) > self.capacity

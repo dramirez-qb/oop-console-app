@@ -12,6 +12,7 @@ from .commands import Commands
 from .invoker import Invoker, CommandNotFoundException
 
 
+# Console Manager Class
 class CliManager:
     def __init__(self):
         # Init state
@@ -51,6 +52,7 @@ class CliManager:
         )
         self.invoker.register("0", Commands.exit, after_command=None)
 
+    # AfterCommands methods to update the state
     def _create_robot(self, robot: Robot):
         try:
             self.state.park_robot(robot)
@@ -202,6 +204,7 @@ class CliManager:
         for i in history:
             print(f"- Action: {i[0]}, Robot: {i[1]} ({i[2]})")
 
+    # Add some example data
     def populate_data(self):
         self.state.garage = Garage(3)
 

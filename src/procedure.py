@@ -1,5 +1,7 @@
 from src.robot import Robot
 
+# Note: This class is ambiguous. 
+# I just added the procedure time to the list of robots
 
 class Procedure:
     time = 0

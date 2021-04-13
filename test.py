@@ -26,9 +26,12 @@ class TestClass:
         Procedure(200, robots=[r2d2])
     ]
 
+    # Test the capacity of the created garage
     def test_garage(self):
         assert self.garage.capacity == 3
 
+    # Test the robots actions and the manage
+    # of the energy and happiness
     def test_robot_move(self):
         self.r2d2.move()
         assert self.r2d2.energy == 39 and self.r2d2.happiness == 19
@@ -41,9 +44,9 @@ class TestClass:
         self.bb8.hibernate()
         assert self.bb8.happiness == 9 and self.bb8.energy == 46
 
+    # Test that the parked robots are in the garage
     def test_robot_list(self):
         flag = True
         for i in self.garage.robots:
             print(i)
         assert flag == True
-
